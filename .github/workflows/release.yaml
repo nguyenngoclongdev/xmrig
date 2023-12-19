@@ -95,7 +95,7 @@ jobs:
           prerelease: false
       - name: Set version
         id: version
-        run: echo ::set-output name=VERSION::${GITHUB_REF:10}
+        run: echo "VERSION=${GITHUB_REF:10}" >>$GITHUB_OUTPUT
       - name: Download Windows build artifacts
         uses: actions/download-artifact@v1
         with:
